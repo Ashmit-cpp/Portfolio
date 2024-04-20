@@ -16,9 +16,8 @@ export const AuroraBackground = ({
   return (
     <main>
       <div className={cn(" transition-bg", className)} {...props}>
-        <div className="rotate-180  absolute inset-0 overflow-hidden -z-50">
+        <div className="rotate-180 backdrop-brightness-50 absolute inset-0 overflow-hidden -z-50">
           <div
-            //   I'm sorry but this is what peak developer performance looks like // trigger warning
             className={cn(
               `
             [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]

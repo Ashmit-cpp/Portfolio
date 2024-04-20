@@ -9,14 +9,21 @@ export default function ContactPage() {
   return (
     <>
       <section>
-        <div className="py-8 lg:py-16 px-4 ">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center ">
-            Contact Us
+        <div className="py-8 lg:py-12 px-4 ">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-pretty ">
+            Get in Touch
           </h2>
-          <p className="mb-8 lg:mb-16 font-light text-center sm:text-xl">
-            Got a technical issue? Want to send feedback about a beta feature?
-            Need details about our Business plan? Let us know.
-          </p>
+          <div className="mb-8 lg:mb-10 font-light text-pretty sm:text-xl">
+            {" "}
+            <p>
+              Ready to start your next project? Have a question or just want to
+              say hello? I'd love to hear from you! Fill out the form below to
+              send me a message, and I'll get back to you as soon as possible.
+              <p> Let's collaborate and turn your ideas into reality.</p>
+
+            </p>
+          </div>
+
           <form action={sendMail} method="POST" className="space-y-8">
             <div>
               <Label className="block mb-2 text-sm font-medium ">
@@ -25,7 +32,7 @@ export default function ContactPage() {
               <Input
                 type="email"
                 name="email"
-                placeholder="name@flowbite.com"
+                placeholder="example@example.com"
                 required
               />
             </div>
@@ -39,7 +46,9 @@ export default function ContactPage() {
               />
             </div>
             <div className="sm:col-span-2">
-              <Label>Your message</Label>
+              <Label className="block mb-2 text-sm font-medium ">
+                Your Message
+              </Label>
               <Textarea
                 name="message"
                 placeholder="Leave a comment..."
