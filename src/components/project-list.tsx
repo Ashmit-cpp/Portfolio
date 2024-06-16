@@ -23,32 +23,32 @@ function ProjectList() {
 
 const projects = [
   {
-    date: "22 Mar 2021",
+    date: "22 Feb 2024",
     link: "Acme-EStore",
     title: "Acme EStore",
     description:
       "Utilized Vite and TailwindCSS for rapid development and streamlined styling. Implemented NestJS for a modular, scalable architecture, with high-performance caching and session management using Redis.",
   },
   {
-    date: "15 Sep 2020",
+    date: "15 Oct 2023",
     link: "LangBridge",
     title: "LangBridge",
     description:
       "Saas application built using Next.js for its responsive and efficient front-end, Supabase for data storage and management, and Stripe for secure and convenient payment processing.",
   },
   {
-    date: "22 Mar 2021",
-    link: "WebDev-IDE",
-    title: "WebDev IDE",
-    description:
-      "A cross-platform IDE for web development using PyQt in Python, featuring a built-in browser window and support for syntax highlighting in HTML, CSS & Javascript.",
-  },
-  {
-    date: "12 Jun 2019",
+    date: "12 Jan 2023",
     link: "Flavorful-Finds",
     title: "Flavorful Finds",
     description:
       "A responsive recipe website using React, Firebase, and Firestore, allowing users to search for, view, and save their favorite recipes with detailed information provided by Spoonacular API",
+  },
+  {
+    date: "22 Aug 2022",
+    link: "WebDev-IDE",
+    title: "WebDev IDE",
+    description:
+      "A cross-platform IDE for web development using PyQt in Python, featuring a built-in browser window and support for syntax highlighting in HTML, CSS & Javascript.",
   },
 ];
 
