@@ -5,7 +5,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import ProjectList from "@/components/projectList";
+import ProjectList from "@/components/project-list";
 import { motion } from "framer-motion";
 
 export default function MyProjectLayout({
@@ -20,7 +20,7 @@ export default function MyProjectLayout({
       {isDesktop ? (
         <div>
           <ResizablePanelGroup className="" direction="horizontal">
-            <ResizablePanel defaultSize={40}>
+            <ResizablePanel defaultSize={40} className="min-w-[26vw]">
               <ProjectList />
             </ResizablePanel>
             <ResizableHandle />

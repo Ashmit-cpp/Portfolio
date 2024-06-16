@@ -1,5 +1,5 @@
 "use client";
-import { Mulish } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { useMediaQuery } from "./hooks/use-media-query";
@@ -13,7 +13,7 @@ import {
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion } from "framer-motion";
 
-const Mulishfont = Mulish({ subsets: ["latin"] });
+const Interfont = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -26,7 +26,7 @@ export default function RootLayout({
     <>
       {isDesktop ? (
         <html lang="en">
-          <body className={Mulishfont.className}>
+          <body className={Interfont.className}>
             <ThemeProvider
               attribute="class"
               defaultTheme="dark"
@@ -64,7 +64,7 @@ export default function RootLayout({
         </html>
       ) : (
         <html lang="en">
-          <body className={Mulishfont.className}>
+          <body className={Interfont.className}>
             <ThemeProvider
               attribute="class"
               defaultTheme="dark"

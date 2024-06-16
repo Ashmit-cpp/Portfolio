@@ -23,7 +23,11 @@ function ContactForm() {
             <p> Let's collaborate and turn your ideas into reality.</p>
           </div>
 
-          <form action={sendMail} method="POST" className="space-y-8">
+          <form
+            action={sendMail}
+            method="POST"
+            className="space-y-8 max-w-[40vw]"
+          >
             <div>
               <Label className="block mb-2 text-sm font-medium ">
                 Your email

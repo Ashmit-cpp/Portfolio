@@ -1,5 +1,5 @@
-"use client"
-import ProjectList from "@/components/projectList";
+"use client";
+import ProjectList from "@/components/project-list";
 import React from "react";
 import { motion } from "framer-motion";
 
