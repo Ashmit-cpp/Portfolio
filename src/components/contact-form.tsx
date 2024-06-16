@@ -16,11 +16,11 @@ function ContactForm() {
           <div className="mb-8 lg:mb-10 font-light text-pretty sm:text-xl">
             {" "}
             <p>
-              Ready to start your next project? Have a question or just want to
+              {` Ready to start your next project? Have a question or just want to
               say hello? I'd love to hear from you! Fill out the form below to
-              send me a message, and I'll get back to you as soon as possible.
+              send me a message, and I'll get back to you as soon as possible.`}
             </p>
-            <p> Let's collaborate and turn your ideas into reality.</p>
+            <p> {`Let's collaborate and turn your ideas into reality.`}</p>
           </div>
 
           <form
