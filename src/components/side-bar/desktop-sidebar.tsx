@@ -14,18 +14,9 @@ function DesktopSidebar() {
       <header className="text-foreground body-font">
         <div className="container flex p-5 flex-col items-center h-screen justify-between">
           <a className="flex title-font font-medium items-center text-primary mb-4 md:mb-0">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-10 h-10 text-white p-2 bg-primary rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
+            <div className="font-medium text-pretty text-xl bg-primary p-2 rounded-full text-foreground">
+              AS
+            </div>
             <span className="ml-3 text-xl">Ashmit Sharma</span>
           </a>
           <nav className="flex flex-col gap-10 items-center justify-center">

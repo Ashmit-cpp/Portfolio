@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { useMediaQuery } from "./hooks/use-media-query";
-import MobileSidebar from "@/components/side-bar/MobileSidebar";
-import DesktopSidebar from "@/components/side-bar/DesktopSidebar";
+import MobileSidebar from "@/components/side-bar/mobile-sidebar";
+import DesktopSidebar from "@/components/side-bar/desktop-sidebar";
 import {
   ResizableHandle,
   ResizablePanel,
