@@ -15,7 +15,7 @@ export default function MyProjectLayout({
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
-    <div className="h-[80vh] md:h-[100vh]">
+    <div>
       {isDesktop ? (
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel defaultSize={40} className="min-w-[26vw]">
