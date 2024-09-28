@@ -17,9 +17,12 @@ function MobileSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="h-[10vh] bg-secondary/20 sticky top-0">
+    <div className="bg-secondary/20 top-0">
       <div className="container flex p-2 flex-row items-center align-middle justify-between">
-        <div className="mt-1 flex title-font font-medium items-center text-primary mb-4 md:mb-0">
+        <div
+          className="mt-1 flex title-font font-medium items-center text-primary mb-4 md:mb-0"
+          onClick={() => router.push("/")}
+        >
           <div className="font-medium text-pretty text-xl bg-primary p-2 rounded-full text-foreground">
             AS
           </div>

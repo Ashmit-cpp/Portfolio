@@ -34,30 +34,16 @@ export default function RootLayout({
               disableTransitionOnChange
             >
               <AuroraBackground>
-                <motion.div
-                  initial={{ opacity: 0.0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.1,
-                    duration: 0.4,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <div>
-                    <ResizablePanelGroup direction="horizontal">
-                      <ResizablePanel
-                        className="min-w-48 max-w-96"
-                        defaultSize={16}
-                      >
-                        <DesktopSidebar />
-                      </ResizablePanel>
-                      <ResizableHandle />
-                      <ResizablePanel defaultSize={80}>
-                        {children}
-                      </ResizablePanel>
-                    </ResizablePanelGroup>
-                  </div>
-                </motion.div>
+                <ResizablePanelGroup direction="horizontal">
+                  <ResizablePanel
+                    className="min-w-48 max-w-96"
+                    defaultSize={16}
+                  >
+                    <DesktopSidebar />
+                  </ResizablePanel>
+                  <ResizableHandle />
+                  <ResizablePanel defaultSize={80}>{children}</ResizablePanel>
+                </ResizablePanelGroup>
               </AuroraBackground>
             </ThemeProvider>
           </body>
@@ -73,12 +59,12 @@ export default function RootLayout({
             >
               <AuroraBackground>
                 <motion.div
-                  initial={{ opacity: 0.0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0.0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{
-                    delay: 0.1,
-                    duration: 0.6,
-                    ease: "easeInOut",
+                    delay: 0,
+                    duration: 0.3,
+                    ease: "anticipate",
                   }}
                 >
                   <MobileSidebar />

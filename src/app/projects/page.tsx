@@ -13,8 +13,9 @@ function ProjectsPage() {
         duration: 0.2,
         ease: "linear",
       }}
+      className="h-fit"
     >
-      <ProjectList />{" "}
+      <ProjectList />
     </motion.div>
   );
 }

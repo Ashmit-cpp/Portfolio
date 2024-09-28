@@ -1,10 +1,4 @@
-import React from "react";
-import { ScrollArea } from "./ui/scroll-area";
-import { useParams } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-
-interface Project {
+export interface Project {
   title: string;
   desc: string;
   image: string;
@@ -12,11 +6,42 @@ interface Project {
   link: string;
 }
 
-interface ProjectDetailsMap {
+export interface ProjectDetailsMap {
   [key: string]: Project;
 }
 
-const projectDetails: ProjectDetailsMap = {
+export const projects = [
+  {
+    date: "22 Feb 2024",
+    link: "Acme-EStore",
+    title: "Acme EStore",
+    description:
+      "Utilized Vite and TailwindCSS for rapid development and streamlined styling. Implemented NestJS for a modular, scalable architecture, with high-performance caching and session management using Redis.",
+  },
+  {
+    date: "15 Oct 2023",
+    link: "LangBridge",
+    title: "LangBridge",
+    description:
+      "Saas application built using Next.js for its responsive and efficient front-end, Supabase for data storage and management, and Stripe for secure and convenient payment processing.",
+  },
+  {
+    date: "12 Jan 2023",
+    link: "Flavorful-Finds",
+    title: "Flavorful Finds",
+    description:
+      "A responsive recipe website using React, Firebase, and Firestore, allowing users to search for, view, and save their favorite recipes with detailed information provided by Spoonacular API",
+  },
+  {
+    date: "22 Aug 2022",
+    link: "WebDev-IDE",
+    title: "WebDev IDE",
+    description:
+      "A cross-platform IDE for web development using PyQt in Python, featuring a built-in browser window and support for syntax highlighting in HTML, CSS & Javascript.",
+  },
+];
+
+export const projectDetails: ProjectDetailsMap = {
   "WebDev-IDE": {
     title: "WebDev IDE",
     desc: `A cross-platform IDE for web development using PyQt in Python, featuring a built-in browser window and support for syntax highlighting in HTML, CSS & Javascript.`,
@@ -47,69 +72,3 @@ const projectDetails: ProjectDetailsMap = {
     link: "https://github.com/Ashmit-cpp/Flavorful-Finds",
   },
 };
-
-function ProjectDetails() {
-  const params = useParams<{ myprojects: string }>();
-  const project = projectDetails[params.myprojects];
-
-  if (!project) {
-    return <div>Project not found</div>;
-  }
-
-  return (
-    <div className="">
-      <ScrollArea className="text-muted-foreground body-font h-[90vh] lg:h-[100vh]">
-        <main className="pt-8 lg:pt-12 antialiased">
-          <div className="flex justify-between px-4 mx-auto max-w-screen-xl">
-            <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-              <header className="mb-4 lg:mb-6 not-format">
-                <h1 className="mb-1 text-3xl font-extrabold leading-tight lg:mb-2 lg:text-4xl">
-                  {project.title}
-                </h1>
-                <div className="lead">
-                  {project.desc.split("\n\n").map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-                </div>
-              </header>
-
-              <div className="w-full flex justify-center">
-                <Image
-                  src={project.image}
-                  width={500}
-                  height={500}
-                  alt="Picture of the project"
-                />
-              </div>
-
-              <div className="my-4 lg:my-8">
-                {project.body}
-                <div className="mb-4 p-2 flex flex-row">
-                  <span className="whitespace-nowrap">
-                    {`Checkout source code and deployed project on `}
-                    <Link
-                      className="underline whitespace-nowrap"
-                      href={project.link}
-                    >
-                      GitHub
-                    </Link>{" "}
-                  </span>{" "}
-                  <span className="whitespace-nowrap">
-                    <Image
-                      src="/git.svg"
-                      width={24}
-                      height={24}
-                      alt="git logo"
-                    />
-                  </span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </main>
-      </ScrollArea>
-    </div>
-  );
-}
-
-export default ProjectDetails;

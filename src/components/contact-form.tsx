@@ -4,8 +4,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { sendMail } from "@/app/actions/sendMail";
+import { icons } from "lucide-react";
 
 function ContactForm() {
+  const handleClick = () => {
+    window.open(
+      "https://www.linkedin.com/in/ashmit-sharma-4287ab197/",
+      "_blank"
+    );
+  };
+
   return (
     <div>
       <section>
@@ -59,6 +67,17 @@ function ContactForm() {
             </div>
             <Button type="submit">Send message</Button>
           </form>
+          <div className="flex mt-7 items-center">
+            <h1>Connect with me</h1>
+            <Button
+              type="button"
+              variant="link"
+              size="icon"
+              onClick={handleClick}
+            >
+              <img src="/linkedin.svg" />
+            </Button>
+          </div>
         </div>
       </section>
     </div>
