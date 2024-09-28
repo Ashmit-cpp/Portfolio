@@ -17,11 +17,11 @@ function ContactForm() {
   return (
     <div>
       <section>
-        <div className="py-8 lg:py-12 px-4 ">
+        <div className="py-6 lg:py-8 px-4 ">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-pretty ">
             Get in Touch
           </h2>
-          <div className="mb-8 lg:mb-10 font-light text-pretty sm:text-xl">
+          <div className="mb-6 lg:mb-8 font-light text-pretty sm:text-xl">
             {" "}
             <p>
               {` Ready to start your next project? Have a question or just want to
@@ -29,12 +29,23 @@ function ContactForm() {
               send me a message, and I'll get back to you as soon as possible.`}
             </p>
             <p> {`Let's collaborate and turn your ideas into reality.`}</p>
+            <div className="flex items-center">
+              <h1>Connect with me</h1>
+              <Button
+                type="button"
+                variant="link"
+                size="icon"
+                onClick={handleClick}
+              >
+                <img src="/linkedin.svg" />
+              </Button>
+            </div>
           </div>
 
           <form
             action={sendMail}
             method="POST"
-            className="space-y-8 max-w-[40vw]"
+            className="space-y-8 max-w-[70vw]"
           >
             <div>
               <Label className="block mb-2 text-sm font-medium ">
@@ -67,17 +78,6 @@ function ContactForm() {
             </div>
             <Button type="submit">Send message</Button>
           </form>
-          <div className="flex mt-7 items-center">
-            <h1>Connect with me</h1>
-            <Button
-              type="button"
-              variant="link"
-              size="icon"
-              onClick={handleClick}
-            >
-              <img src="/linkedin.svg" />
-            </Button>
-          </div>
         </div>
       </section>
     </div>
