@@ -22,7 +22,7 @@ export default function MyProjectLayout({
             <ProjectList />
           </ResizablePanel>
           <ResizableHandle />
-          <ResizablePanel>{children}</ResizablePanel>
+          <ResizablePanel className="min-w-[30vw]">{children}</ResizablePanel>
         </ResizablePanelGroup>
       ) : (
         <div>{children}</div>

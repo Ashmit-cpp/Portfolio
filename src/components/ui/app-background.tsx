@@ -2,8 +2,9 @@
 import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { paths } from "@/lib/const";
+import { PATHS } from "@/lib/const";
 import { usePathname } from "next/navigation";
+import { useMediaQuery } from "@/app/hooks/use-media-query";
 interface BackgroundBeamsProps {
   className?: string;
   children: ReactNode;
@@ -12,16 +13,11 @@ interface BackgroundBeamsProps {
 export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
   ({ className, children }) => {
     const pathname = usePathname();
-
+    const isDesktop = useMediaQuery("(min-width: 768px)");
     return (
-      <div
-        className={cn(
-          "absolute  h-full w-full inset-0  [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center",
-          className
-        )}
-      >
+      <div className={cn("relative", className)}>
         <svg
-          className=" z-0 h-full w-full pointer-events-none absolute "
+          className="z-0 absolute pointer-events-none bg-cover"
           width="100%"
           height="100%"
           viewBox="0 0 696 316"
@@ -35,7 +31,7 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
             strokeWidth="0.5"
           ></path>
 
-          {paths.map((path, index) => (
+          {PATHS.map((path, index) => (
             <motion.path
               key={`path-` + index}
               d={path}
@@ -46,7 +42,8 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
           ))}
           <defs>
             {pathname === "/" &&
-              paths.map((path, index) => (
+              isDesktop &&
+              PATHS.map((path, index) => (
                 <motion.linearGradient
                   id={`linearGradient-${index}`}
                   key={`gradient-${index}`}

@@ -75,7 +75,7 @@ export const projectDetails: ProjectDetailsMap = {
   },
 };
 
-export const paths = [
+export const PATHS = [
   "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
   "M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867",
   "M-366 -205C-366 -205 -298 200 166 327C630 454 698 859 698 859",

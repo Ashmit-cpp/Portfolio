@@ -23,12 +23,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             disableTransitionOnChange
           >
             <SidebarProvider>
-              <BackgroundBeams>
-                <div className="flex flex-col md:flex-row">
+              <div className="flex flex-col h-screen">
+                <div className="flex flex-col md:flex-row flex-1 lg:flex-0">
                   <RootLayout />
-                  {children}
+                  <BackgroundBeams className="flex-1">
+                    {children}
+                  </BackgroundBeams>
                 </div>
-              </BackgroundBeams>
+              </div>
             </SidebarProvider>
           </ThemeProvider>
         </body>

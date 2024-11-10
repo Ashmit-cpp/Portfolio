@@ -12,12 +12,12 @@ import {
 } from "@/components/ui/drawer";
 import { Menu } from "lucide-react";
 
-function MobileSidebar() {
+function MobileHeader() {
   const router = useRouter();
   const pathname = usePathname();
 
   return (
-    <div className="bg-secondary/20 top-0">
+    <div className="bg-secondary/20 top-0 w-full">
       <div className="container flex p-2 flex-row items-center align-middle justify-between">
         <div
           className="mt-1 flex title-font font-medium items-center text-primary mb-4 md:mb-0"
@@ -93,4 +93,4 @@ function MobileSidebar() {
   );
 }
 
-export default MobileSidebar;
+export default MobileHeader;

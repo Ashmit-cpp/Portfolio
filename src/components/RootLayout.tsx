@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import MobileSidebar from "@/components/sidebar/mobile-sidebar";
+import MobileHeader from "@/components/sidebar/mobile-sidebar";
 import DesktopSidebar from "@/components/sidebar/desktop-sidebar";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "@/app/hooks/use-media-query";
@@ -9,7 +9,7 @@ export default function RootLayout() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
-    <>
+    <div className="">
       {isDesktop ? (
         <>
           <DesktopSidebar />
@@ -24,9 +24,9 @@ export default function RootLayout() {
             ease: "anticipate",
           }}
         >
-          <MobileSidebar />
+          <MobileHeader />
         </motion.div>
       )}
-    </>
+    </div>
   );
 }
