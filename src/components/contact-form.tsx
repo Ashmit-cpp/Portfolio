@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { sendMail } from "@/app/actions/sendMail";
-import { icons } from "lucide-react";
 
 function ContactForm() {
   const handleClick = () => {
@@ -18,19 +17,22 @@ function ContactForm() {
     <div>
       <section>
         <div className="py-6 lg:py-8 px-4 ">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-pretty ">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-pretty text-primary">
             Get in Touch
           </h2>
           <div className="mb-6 lg:mb-8 font-light text-pretty sm:text-xl">
-            {" "}
             <p>
               {` Ready to start your next project? Have a question or just want to
-              say hello? I'd love to hear from you! Fill out the form below to
-              send me a message, and I'll get back to you as soon as possible.`}
+              say hello? I'd love to hear from you!`}
             </p>
-            <p> {`Let's collaborate and turn your ideas into reality.`}</p>
+            <p>
+              {`Fill out the form below to send me a message, and I'll get back to you as soon as possible.`}
+            </p>
             <div className="flex items-center">
-              <h1>Connect with me</h1>
+              <h1>
+                {" "}
+                {`Let's collaborate and turn your ideas into reality. You can also connect with me on`}
+              </h1>
               <Button
                 type="button"
                 variant="link"

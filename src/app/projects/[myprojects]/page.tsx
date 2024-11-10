@@ -17,7 +17,7 @@ function ProjectDetails() {
   return (
     <ScrollArea className="p-4 h-[85vh] md:h-[100vh] w-full text-muted-foreground">
       <div className="mb-4 lg:mb-6">
-        <h1 className="mb-1 text-3xl font-extrabold leading-tight lg:mb-2 lg:text-4xl">
+        <h1 className="mb-1 text-3xl font-extrabold leading-tight lg:mb-2 lg:text-4xl text-primary">
           {project.title}
         </h1>
         <div>
