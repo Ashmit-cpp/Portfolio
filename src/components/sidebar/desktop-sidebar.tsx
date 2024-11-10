@@ -30,14 +30,14 @@ const menuItems = [
     icon: List,
   },
   {
-    title: "Contact",
-    path: "/contact",
-    icon: Inbox,
-  },
-  {
     title: "Code Blocks",
     path: "/code-blocks",
     icon: Code,
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+    icon: Inbox,
   },
 ];
 
