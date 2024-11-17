@@ -127,3 +127,54 @@ export const PATHS = [
   "M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491",
   "M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483",
 ];
+
+export const sampleImages = [
+  {
+    id: "img-001", // Unique ID for the image
+    src: "https://images.pexels.com/photos/28802129/pexels-photo-28802129/free-photo-of-tranquil-lake-scene-with-mountains-and-boats.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    alt: "Tranquil lake scene with mountains and boats",
+    title: "Tranquil Lake Scene",
+    description:
+      "A serene lake with calm waters, surrounded by mountains, with boats resting on the shore. A peaceful landscape perfect for nature lovers.",
+  },
+  {
+    id: "img-002", // Unique ID for the image
+    src: "https://images.pexels.com/photos/28999324/pexels-photo-28999324/free-photo-of-vintage-red-tram-on-cobbled-prague-street.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    alt: "Vintage red tram on cobbled Prague street",
+    title: "Vintage Red Tram in Prague",
+    description:
+      "A vintage red tram making its way down a charming cobbled street in Prague, capturing the old-world charm of the city.",
+  },
+  {
+    id: "img-003", // Unique ID for the image
+    src: "https://images.pexels.com/photos/15924953/pexels-photo-15924953/free-photo-of-a-bouquet-of-roses-in-a-glass-vase-on-a-windowsill.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    alt: "Bouquet of roses in a glass vase on a windowsill",
+    title: "Bouquet of Roses",
+    description:
+      "A beautiful bouquet of roses arranged in a glass vase, placed on a windowsill with soft natural light enhancing the elegance of the scene.",
+  },
+  {
+    id: "img-004", // Unique ID for the image
+    src: "https://images.pexels.com/photos/28802246/pexels-photo-28802246/free-photo-of-tranquil-autumn-scene-at-lake-in-bad-aussee.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    alt: "Autumn scene at a lake in Bad Aussee",
+    title: "Autumn Lake in Bad Aussee",
+    description:
+      "A tranquil autumn scene at a lake in Bad Aussee, with colorful fall foliage reflecting on the water's surface, creating a serene atmosphere.",
+  },
+  {
+    id: "img-005", // Unique ID for the image
+    src: "https://images.pexels.com/photos/28931627/pexels-photo-28931627/free-photo-of-white-and-orange-pumpkins-in-autumn-harvest-scene.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    alt: "White and orange pumpkins in autumn harvest scene",
+    title: "Autumn Harvest Pumpkins",
+    description:
+      "A cozy autumn harvest scene featuring white and orange pumpkins placed on a rustic table, embodying the warmth and charm of the fall season.",
+  },
+  {
+    id: "img-006", // Unique ID for the image
+    src: "https://images.pexels.com/photos/29242558/pexels-photo-29242558/free-photo-of-winter-evening-scene-in-baku-with-festive-lights.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    alt: "Winter evening scene in Baku with festive lights",
+    title: "Winter Festive Lights in Baku",
+    description:
+      "A stunning winter evening in Baku, with festive lights illuminating the streets, creating a magical and warm atmosphere during the colder months.",
+  },
+];

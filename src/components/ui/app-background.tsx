@@ -38,7 +38,8 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
               stroke={`url(#linearGradient-${index})`}
               strokeOpacity="0.4"
               strokeWidth="0.5"
-            ></motion.path>
+            >
+            </motion.path>
           ))}
           <defs>
             {pathname === "/" &&
@@ -60,7 +61,7 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
                     y2: ["0%", `${93 + Math.random() * 8}%`],
                   }}
                   transition={{
-                    duration: Math.random() * 10 + 10,
+                    duration: Math.random() * 10 + 6,
                     ease: "easeInOut",
                     repeat: Infinity,
                   }}
