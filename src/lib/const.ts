@@ -130,51 +130,86 @@ export const PATHS = [
 
 export const sampleImages = [
   {
-    id: "img-001", // Unique ID for the image
-    src: "https://images.pexels.com/photos/28802129/pexels-photo-28802129/free-photo-of-tranquil-lake-scene-with-mountains-and-boats.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    alt: "Tranquil lake scene with mountains and boats",
-    title: "Tranquil Lake Scene",
-    description:
-      "A serene lake with calm waters, surrounded by mountains, with boats resting on the shore. A peaceful landscape perfect for nature lovers.",
+    id: "img-001",
+    src: "https://images.pexels.com/photos/3219954/pexels-photo-3219954.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Placeholder Image",
+    title: "Image Title 1",
+    description: "Sample Image Description 1",
   },
   {
-    id: "img-002", // Unique ID for the image
-    src: "https://images.pexels.com/photos/28999324/pexels-photo-28999324/free-photo-of-vintage-red-tram-on-cobbled-prague-street.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    alt: "Vintage red tram on cobbled Prague street",
-    title: "Vintage Red Tram in Prague",
-    description:
-      "A vintage red tram making its way down a charming cobbled street in Prague, capturing the old-world charm of the city.",
+    id: "img-002",
+    src: "https://images.pexels.com/photos/2693208/pexels-photo-2693208.png?auto=compress&cs=tinysrgb&w=600",
+    alt: "Placeholder Image",
+    title: "Image Title 2",
+    description: "Sample Image Description 2",
   },
   {
-    id: "img-003", // Unique ID for the image
-    src: "https://images.pexels.com/photos/15924953/pexels-photo-15924953/free-photo-of-a-bouquet-of-roses-in-a-glass-vase-on-a-windowsill.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    alt: "Bouquet of roses in a glass vase on a windowsill",
-    title: "Bouquet of Roses",
-    description:
-      "A beautiful bouquet of roses arranged in a glass vase, placed on a windowsill with soft natural light enhancing the elegance of the scene.",
+    id: "img-003",
+    src: "https://images.pexels.com/photos/1289669/pexels-photo-1289669.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Placeholder Image",
+    title: "Image Title 3",
+    description: "Sample Image Description 3",
   },
   {
-    id: "img-004", // Unique ID for the image
-    src: "https://images.pexels.com/photos/28802246/pexels-photo-28802246/free-photo-of-tranquil-autumn-scene-at-lake-in-bad-aussee.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    alt: "Autumn scene at a lake in Bad Aussee",
-    title: "Autumn Lake in Bad Aussee",
-    description:
-      "A tranquil autumn scene at a lake in Bad Aussee, with colorful fall foliage reflecting on the water's surface, creating a serene atmosphere.",
+    id: "img-004",
+    src: "https://images.pexels.com/photos/2792258/pexels-photo-2792258.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Placeholder Image",
+    title: "Image Title 4",
+    description: "Sample Image Description 4",
   },
   {
-    id: "img-005", // Unique ID for the image
-    src: "https://images.pexels.com/photos/28931627/pexels-photo-28931627/free-photo-of-white-and-orange-pumpkins-in-autumn-harvest-scene.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    alt: "White and orange pumpkins in autumn harvest scene",
-    title: "Autumn Harvest Pumpkins",
-    description:
-      "A cozy autumn harvest scene featuring white and orange pumpkins placed on a rustic table, embodying the warmth and charm of the fall season.",
+    id: "img-005",
+    src: "https://images.pexels.com/photos/3705001/pexels-photo-3705001.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Placeholder Image",
+    title: "Image Title 5",
+    description: "Sample Image Description 5",
   },
   {
-    id: "img-006", // Unique ID for the image
-    src: "https://images.pexels.com/photos/29242558/pexels-photo-29242558/free-photo-of-winter-evening-scene-in-baku-with-festive-lights.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    alt: "Winter evening scene in Baku with festive lights",
-    title: "Winter Festive Lights in Baku",
-    description:
-      "A stunning winter evening in Baku, with festive lights illuminating the streets, creating a magical and warm atmosphere during the colder months.",
+    id: "img-006",
+    src: "https://images.pexels.com/photos/2439928/pexels-photo-2439928.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Placeholder Image",
+    title: "Image Title 6",
+    description: "Sample Image Description 6",
   },
 ];
+
+export const dialogCode = `export default function ImageGridCarousel() {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  return (
+    <Dialog>
+      <div className="grid grid-cols-3 gap-1">
+        {sampleImages.map((image) => (
+          <DialogTrigger
+            key={image.title}
+            setSelectedId={setSelectedId}
+            layoutId={image.id}
+          >
+            <Image src={image.src} alt={image.alt} width={500} height={500} />
+          </DialogTrigger>
+        ))}
+      </div>
+
+      {selectedId && (
+        <DialogContent
+          layoutId={selectedId}
+          initialIndex={sampleImages.findIndex((img) => img.id === selectedId)}
+        >
+          {sampleImages.map((image) => (
+            <>
+              <DialogHeader>
+                <div className="p-1">
+                  <h2 className="text-lg font-bold">{image.title}</h2>
+                  <p className="text-sm">{image.description}</p>
+                </div>
+              </DialogHeader>
+              <AspectRatio ratio={4 / 3}>
+                <Image src={image.src} alt={image.alt} fill />
+              </AspectRatio>
+            </>
+          ))}
+        </DialogContent>
+      )}
+    </Dialog>
+  );
+}`;

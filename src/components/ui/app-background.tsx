@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { PATHS } from "@/lib/const";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "@/app/hooks/use-media-query";
+import { useSidebar } from "./sidebar";
 interface BackgroundBeamsProps {
   className?: string;
   children: ReactNode;
@@ -13,9 +14,17 @@ interface BackgroundBeamsProps {
 export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
   ({ className, children }) => {
     const pathname = usePathname();
+
+    const { open } = useSidebar();
+
     const isDesktop = useMediaQuery("(min-width: 768px)");
     return (
-      <div className={cn("relative", className)}>
+      <div
+        className={cn(
+          "relative",
+          open && isDesktop ? "w-[calc(100vw-220px)]" : "w-[calc(100vw-55px)]"
+        )}
+      >
         <svg
           className="z-0 absolute pointer-events-none bg-cover"
           width="100%"
@@ -38,8 +47,7 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
               stroke={`url(#linearGradient-${index})`}
               strokeOpacity="0.4"
               strokeWidth="0.5"
-            >
-            </motion.path>
+            ></motion.path>
           ))}
           <defs>
             {pathname === "/" &&

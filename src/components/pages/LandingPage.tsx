@@ -2,8 +2,9 @@
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import React from "react";
-import { motion } from "framer-motion";
 import TechIcons from "@/components/tech-icons";
+import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 const words = [
   {
@@ -25,6 +26,8 @@ const words = [
 const subwords = `Hey, I'm Ashmit Sharma`;
 
 export default function LandingPage() {
+  const router = useRouter();
+
   return (
     <div className="flex px-2 h-[calc(100%-80px)] md:h-screen items-center">
       <div className="flex flex-col">
@@ -39,6 +42,28 @@ export default function LandingPage() {
                 to see how I blend creativity and expertise to bring ideas to
                 life.
               </p>
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant={"secondary"}
+                onClick={() => {
+                  router.push(`/projects`, {
+                    scroll: false,
+                  });
+                }}
+              >
+                Explore Projects
+              </Button>
+              <Button
+                variant={"secondary"}
+                onClick={() => {
+                  router.push(`/code-blocks`, {
+                    scroll: false,
+                  });
+                }}
+              >
+                Explore Code Blocks
+              </Button>
             </div>
           </div>
           <TechIcons />
