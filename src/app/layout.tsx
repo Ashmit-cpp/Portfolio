@@ -7,6 +7,7 @@ import RootLayout from "@/components/RootLayout";
 const Interfont = Inter({ subsets: ["latin"] });
 import type { Metadata } from "next";
 import { BackgroundBeams } from "@/components/ui/app-background";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: `Ashmit's Portfolio`,
@@ -28,6 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <RootLayout />
                   <BackgroundBeams className="flex-1">
                     {children}
+                    <Analytics />
                   </BackgroundBeams>
                 </div>
               </div>
