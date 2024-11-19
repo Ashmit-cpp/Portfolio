@@ -22,7 +22,11 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
       <div
         className={cn(
           "relative",
-          open && isDesktop ? "w-[calc(100vw-220px)]" : "w-[calc(100vw-55px)]"
+          isDesktop
+            ? open
+              ? "w-[calc(100vw-220px)]"
+              : "w-[calc(100vw-55px)]"
+            : "h-[calc(100dvh-90px)]"
         )}
       >
         <svg

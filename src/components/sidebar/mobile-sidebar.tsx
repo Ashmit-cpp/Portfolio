@@ -77,6 +77,19 @@ function MobileHeader() {
                         : "text-foreground/80 font-semibold"
                     }`}
                     onClick={() => {
+                      router.push("/code-blocks", { scroll: false });
+                    }}
+                  >
+                    Code Blocks
+                    <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary group-hover:w-full"></span>
+                  </h1>
+                  <h1
+                    className={`cursor-pointer mr-5 hover:text-primary text-lg m-6 group relative w-max ${
+                      pathname === "/contact"
+                        ? "text-foreground font-bold"
+                        : "text-foreground/80 font-semibold"
+                    }`}
+                    onClick={() => {
                       router.push("/contact", { scroll: false });
                     }}
                   >
