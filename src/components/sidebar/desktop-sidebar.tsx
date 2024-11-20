@@ -45,6 +45,7 @@ function DesktopSidebar() {
   const router = useRouter();
   const pathname = usePathname();
   const { open } = useSidebar();
+
   return (
     <Sidebar collapsible="icon">
       <SidebarContent>
@@ -57,7 +58,11 @@ function DesktopSidebar() {
                     asChild
                     key={item.title}
                     className={`cursor-pointer hover:text-primary h-12 text-base group relative ${
-                      pathname === item.path
+                      item.path === "/"
+                        ? pathname === "/"
+                          ? "bg-sidebar-accent text-primary"
+                          : "text-foreground/80 font-normal"
+                        : pathname.startsWith(item.path)
                         ? "bg-sidebar-accent text-primary"
                         : "text-foreground/80 font-normal"
                     }`}
@@ -66,7 +71,7 @@ function DesktopSidebar() {
                       className="flex items-center"
                       onClick={() => router.push(item.path, { scroll: false })}
                     >
-                      <item.icon />
+                      <item.icon className="mr-2" />
                       <span>{item.title}</span>
                     </div>
                   </SidebarMenuButton>

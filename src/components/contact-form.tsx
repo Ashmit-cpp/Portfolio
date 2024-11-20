@@ -16,7 +16,7 @@ function ContactForm() {
   return (
     <div>
       <section>
-        <div className="py-6 lg:py-8 px-4 ">
+        <div className="p-6">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-pretty text-primary">
             Get in Touch
           </h2>

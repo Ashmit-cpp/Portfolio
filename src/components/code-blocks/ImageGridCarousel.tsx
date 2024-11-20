@@ -11,7 +11,7 @@ import {
 import { sampleImages } from "@/lib/const";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-export default function ImageGridCarousel() {
+export default function   ImageGridCarousel() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (

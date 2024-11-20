@@ -89,18 +89,18 @@ const DialogContent = React.forwardRef<
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className={cn(
-              "grid max-w-[70vw] max-h-[90vh] gap-4 border bg-background p-3 shadow-lg  sm:rounded-lg",
+              "grid max-w-[70vw] min-w-0 max-h-[90vh] gap-4 border bg-background p-3 shadow-lg  sm:rounded-lg",
               className
             )}
           >
-            <Carousel setApi={setApi}>
+            <Carousel className="w-full"   setApi={setApi}>
               <CarouselContent>
                 {/* Automatically wrap children in CarouselItem */}
                 {React.Children.map(children, (child) => (
                   <div
                     role="group"
                     aria-roledescription="slide"
-                    className="min-w-0 shrink-0 grow-0 basis-full pl-4"
+                    className="min-w-0 shrink-0 grow-0 basis-full "
                   >
                     {child}
                   </div>

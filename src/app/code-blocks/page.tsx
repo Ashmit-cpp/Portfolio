@@ -1,44 +1,99 @@
-import ImageGridCarousel from "@/components/code-blocks/ImageGridCarousel";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { dialogCode } from "@/lib/const";
-import { CodeBlock, dracula } from "@react-email/code-block";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
-const Page = () => {
+const WelcomePage: React.FC = () => {
   return (
-    <div className="w-full">
-      <div className="p-4">
-        <h1 className="text-3xl font-bold text-primary">Image Grid Carousel</h1>
-        <p className="">
-          {` A reusable, customizable component built with
-          ShadCN and Framer Motion. It displays images in a grid layout
-          with smooth animations and supports opening a dialog that contains an
-          image carousel for viewing images in a larger, interactive format. Ideal
-          for galleries, portfolios, or image collections.`}
+    <div className="min-h-screen flex w-full md:w-[90%] lg:w-[80%] flex-col  p-6">
+      <header className="text-left">
+        <h1 className="text-4xl font-bold mb-4">
+          Welcome to <span className="text-primary">ShadCN Blocks</span>
+        </h1>
+        <p className="text-lg">
+          ShadCN Blocks is an open-source collection of polished, reusable UI
+          components built on top of ShadCN
         </p>
+      </header>
+
+      <main className="mt-8  text-left">
+        <div>
+          <h2 className="text-2xl font-semibold text-secondary-foreground ">
+            Key Features
+          </h2>
+          <ul className="mt-4 list-disc list-inside text-left space-y-2">
+            <li>
+              <strong className="text-secondary-foreground">
+                No Extra Setup:
+              </strong>{" "}
+              {`If you’ve already set up ShadCN, there’s nothing more to install.
+              Just copy and paste!`}
+            </li>
+            <li>
+              <strong className="text-secondary-foreground">
+                Polished Animations:
+              </strong>{" "}
+              Components come with smooth, professional animations to enhance
+              the user experience.
+            </li>
+            <li>
+              <strong className="text-secondary-foreground">
+                Component-Based:
+              </strong>{" "}
+              Modular and reusable components that can be easily customized to
+              suit your needs.
+            </li>
+            <li>
+              <strong className="text-secondary-foreground">
+                Responsive Design:
+              </strong>{" "}
+              All components are mobile-first and responsive out of the box.
+            </li>
+            <li>
+              <strong className="text-secondary-foreground">
+                Open Source:
+              </strong>{" "}
+              Freely available for anyone to use and contribute to.
+            </li>
+            <li>
+              <strong className="text-secondary-foreground">Accessible:</strong>{" "}
+              Built with accessibility in mind for a more inclusive user
+              experience.
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold text-secondary-foreground ">
+            Getting Started
+          </h2>
+          <p className="mt-4 leading-relaxed">
+            {`To get started with ShadCN Blocks, you should have a basic
+            understanding of ReactJS/NextJS and Tailwind CSS. You’ll also need a
+            foundational knowledge of ShadCN UI.`}
+          </p>
+          <p className="mt-4 leading-relaxed">
+            {`If you’re new to ShadCN, you can explore the official ShadCN UI
+            documentation to get familiar with its components and setup process.
+            Once you're comfortable, you can easily integrate ShadCN Blocks into
+            your project by copying the components and pasting them where
+            needed.`}
+          </p>
+        </div>
+      </main>
+
+      <div className="mt-4 w-full flex justify-center md:justify-end">
+        <Link href="/code-blocks/carousel-dialog">
+          <Button>
+            Start Exploring <ChevronRight />
+          </Button>
+        </Link>
       </div>
-      <div className="flex w-full px-4">
-        <Tabs defaultValue="preview" className="w-[800px] overflow-auto">
-          <TabsList>
-            <TabsTrigger value="preview">Preview</TabsTrigger>
-            <TabsTrigger value="code">Code</TabsTrigger>
-          </TabsList>
-          <Separator />
-          <TabsContent value="preview">
-            <div className="p-2 bg-secondary">
-              <ImageGridCarousel />
-            </div>
-          </TabsContent>
-          <TabsContent value="code">
-            <ScrollArea className="h-[400px] overflow-auto p-2 bg-secondary">
-              <CodeBlock code={dialogCode} theme={dracula} language="tsx" />
-            </ScrollArea>
-          </TabsContent>
-        </Tabs>{" "}
-      </div>
+
+      {/* <footer className="mt-12 text-sm text-gray-500">
+        <p>© 2024 ShadCN Blocks. Open Source and Free to Use.</p>
+      </footer> */}
     </div>
   );
 };
 
-export default Page;
+export default WelcomePage;
