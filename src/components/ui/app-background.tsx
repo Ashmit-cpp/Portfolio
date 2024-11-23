@@ -24,8 +24,8 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
           "relative",
           isDesktop
             ? open
-              ? "w-[calc(100vw-220px)]"
-              : "w-[calc(100vw-55px)]"
+              ? "w-[calc(100vw-232px)]"
+              : "w-[calc(100vw-70px)]"
             : "h-[calc(100dvh-90px)]"
         )}
       >
