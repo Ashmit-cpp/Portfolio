@@ -16,7 +16,7 @@ export const ImageGridCarousel = () => {
 
   return (
     <Dialog>
-      <div className="grid grid-cols-3 gap-1">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
         {sampleImages.map((image) => (
           <DialogTrigger
             key={image.title}
