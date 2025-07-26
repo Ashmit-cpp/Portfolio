@@ -25,7 +25,7 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
           isDesktop
             ? open
               ? "w-[calc(100vw-232px)]"
-              : "w-[calc(100vw-70px)]"
+              : "w-[calc(100vw-90px)]"
             : "h-[calc(100dvh-90px)]"
         )}
       >
@@ -78,9 +78,9 @@ export const BackgroundBeams: React.FC<BackgroundBeamsProps> = React.memo(
                     repeat: Infinity,
                   }}
                 >
-                  <stop stopColor="#18CCFC" stopOpacity="0"></stop>
-                  <stop stopColor="#18CCFC"></stop>
-                  <stop offset="69%" stopColor="#18B6B9"></stop>
+                  <stop stopColor="#C7A18B" stopOpacity="0"></stop>
+                  <stop stopColor="#C7A18B"></stop>
+                  <stop offset="69%" stopColor="#AD8C79"></stop>
                   <stop
                     offset="100%"
                     stopColor="#AE48FF"
