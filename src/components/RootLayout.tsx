@@ -9,7 +9,7 @@ export default function RootLayout() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
-    <div className="">
+    <div>
       {isDesktop ? (
         <>
           <DesktopSidebar />
