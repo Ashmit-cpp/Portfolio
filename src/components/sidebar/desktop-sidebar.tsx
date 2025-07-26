@@ -7,7 +7,6 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -16,7 +15,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { ModeToggle } from "../../lib/mode-toggle";
-import { Home, List, Inbox, Settings, Code } from "lucide-react";
+import { Home, List, Inbox, Code } from "lucide-react";
 
 const menuItems = [
   {
@@ -47,44 +46,63 @@ function DesktopSidebar() {
   const { open } = useSidebar();
 
   return (
-    <Sidebar collapsible="icon">
-      <SidebarContent>
+    <Sidebar collapsible="icon" className="border-r border-border/20">
+      <SidebarHeader className="border-b border-border/20 p-3">
+        <div className={`flex items-center transition-all duration-200 ${open ? 'gap-3' : 'justify-center'}`}>
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
+            AS
+          </div>
+          {open && (
+            <div className="flex flex-col min-w-0">
+              <span className="font-semibold text-base truncate">Ashmit Sharma</span>
+              <span className="text-xs text-muted-foreground truncate">FullStack Developer</span>
+            </div>
+          )}
+        </div>
+      </SidebarHeader>
+
+      <SidebarContent className="p-2">
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu className="flex flex-col justify-start">
-              {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    asChild
-                    key={item.title}
-                    className={`cursor-pointer hover:text-primary h-12 text-base group relative ${
-                      item.path === "/"
-                        ? pathname === "/"
-                          ? "bg-sidebar-accent text-primary"
-                          : "text-foreground/80 font-normal"
-                        : pathname.startsWith(item.path)
-                        ? "bg-sidebar-accent text-primary"
-                        : "text-foreground/80 font-normal"
-                    }`}
-                  >
-                    <div
-                      className="flex items-center"
-                      onClick={() => router.push(item.path, { scroll: false })}
+            <SidebarMenu className="space-y-1">
+              {menuItems.map((item) => {
+                const isActive = item.path === "/" 
+                  ? pathname === "/" 
+                  : pathname.startsWith(item.path);
+                
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      asChild
+                      className={`cursor-pointer h-10 rounded-md transition-colors ${
+                        isActive
+                          ? "bg-primary text-primary-foreground"
+                          : "hover:bg-accent hover:text-accent-foreground"
+                      }`}
                     >
-                      <item.icon className="mr-2" />
-                      <span>{item.title}</span>
-                    </div>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+                      <div
+                        className={`flex items-center ${open ? 'gap-3 px-3' : 'justify-center'}`}
+                        onClick={() => router.push(item.path, { scroll: false })}
+                      >
+                        <item.icon className="w-4 h-4 flex-shrink-0" />
+                        {open && (
+                          <span className="font-medium text-sm truncate">{item.title}</span>
+                        )}
+                      </div>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="flex gap-x-8">
-        <ModeToggle />
-        <SidebarTrigger />
+      <SidebarFooter className="border-t border-border/20 p-4">
+        <div className={`flex items-center ${open ? 'justify-between' : 'justify-center gap-2'}`}>
+          <ModeToggle />
+          <SidebarTrigger />
+        </div>
       </SidebarFooter>
     </Sidebar>
   );

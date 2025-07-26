@@ -10,94 +10,103 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Menu, Home, List, Code, Inbox, X } from "lucide-react";
+
+const menuItems = [
+  {
+    title: "Home",
+    path: "/",
+    icon: Home,
+  },
+  {
+    title: "My Projects",
+    path: "/projects",
+    icon: List,
+  },
+  {
+    title: "Code Blocks",
+    path: "/code-blocks",
+    icon: Code,
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+    icon: Inbox,
+  },
+];
 
 function MobileHeader() {
   const router = useRouter();
   const pathname = usePathname();
 
   return (
-    <div className="bg-secondary/20 top-0 w-full">
-      <div className="container flex p-2 flex-row items-center align-middle justify-between">
+    <div className="bg-card/90 backdrop-blur-sm border-b border-border/20 sticky top-0 z-50">
+      <div className="container flex p-4 flex-row items-center justify-between">
+        {/* Brand */}
         <div
-          className="mt-1 flex title-font font-medium items-center text-primary mb-4 md:mb-0"
+          className="flex items-center gap-3 cursor-pointer"
           onClick={() => router.push("/")}
         >
-          <div className="font-medium text-pretty text-xl bg-primary p-2 rounded-full text-foreground">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
             AS
           </div>
-          <span className="ml-3 mt-1 text-2xl">Ashmit Sharma</span>
+          <div className="flex flex-col">
+            <span className="font-semibold text-base">Ashmit Sharma</span>
+            <span className="text-xs text-muted-foreground">FullStack Developer</span>
+          </div>
         </div>
 
-        <div className="flex gap-x-8">
+        {/* Controls */}
+        <div className="flex items-center gap-3">
           <ModeToggle />
           <Drawer>
-            <DrawerTrigger>
-              <Menu />
+            <DrawerTrigger asChild>
+              <Button variant="ghost" size="icon" className="hover:bg-accent">
+                <Menu className="w-5 h-5" />
+              </Button>
             </DrawerTrigger>
-            <DrawerContent>
-              <DrawerHeader>
-                <DrawerTitle>Explore</DrawerTitle>
-                {/* <DrawerDescription>
-                  This action cannot be undone.
-                </DrawerDescription> */}
+            
+            <DrawerContent className="h-[70vh]">
+              <DrawerHeader className="border-b border-border/20 pb-4">
+                <div className="flex items-center justify-between">
+                  <DrawerTitle className="text-xl font-semibold">
+                    Navigation
+                  </DrawerTitle>
+                  <DrawerClose asChild>
+                    <Button variant="ghost" size="icon">
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </DrawerClose>
+                </div>
               </DrawerHeader>
-              <DrawerClose>
-                <nav className="flex flex-col items-start justify-center">
-                  <h1
-                    className={`  cursor-pointer mr-5 hover:text-primary text-lg m-6 group relative w-max ${
-                      pathname === "/"
-                        ? "text-foreground font-bold"
-                        : "text-foreground/80 font-semibold"
-                    }`}
-                    onClick={() => {
-                      router.push("/", { scroll: false });
-                    }}
-                  >
-                    Home
-                    <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary group-hover:w-full"></span>
-                  </h1>
-                  <h1
-                    className={` cursor-pointer mr-5 hover:text-primary text-lg m-6 group relative w-max ${
-                      pathname.startsWith("/projects")
-                        ? "text-foreground font-bold"
-                        : "text-foreground/80 font-semibold"
-                    }`}
-                    onClick={() => {
-                      router.push("/projects", { scroll: false });
-                    }}
-                  >
-                    My Projects
-                    <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary group-hover:w-full"></span>
-                  </h1>
-                  <h1
-                    className={`cursor-pointer mr-5 hover:text-primary text-lg m-6 group relative w-max ${
-                      pathname === "/contact"
-                        ? "text-foreground font-bold"
-                        : "text-foreground/80 font-semibold"
-                    }`}
-                    onClick={() => {
-                      router.push("/code-blocks", { scroll: false });
-                    }}
-                  >
-                    Code Blocks
-                    <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary group-hover:w-full"></span>
-                  </h1>
-                  <h1
-                    className={`cursor-pointer mr-5 hover:text-primary text-lg m-6 group relative w-max ${
-                      pathname === "/contact"
-                        ? "text-foreground font-bold"
-                        : "text-foreground/80 font-semibold"
-                    }`}
-                    onClick={() => {
-                      router.push("/contact", { scroll: false });
-                    }}
-                  >
-                    Contact
-                    <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary group-hover:w-full"></span>
-                  </h1>
+              
+              <div className="flex-1 p-4">
+                <nav className="space-y-2">
+                  {menuItems.map((item) => {
+                    const isActive = item.path === "/" 
+                      ? pathname === "/" 
+                      : pathname.startsWith(item.path);
+                    
+                    return (
+                      <DrawerClose key={item.title} asChild>
+                        <Button
+                          variant="ghost"
+                          className={`w-full justify-start h-12 rounded-md transition-colors ${
+                            isActive
+                              ? "bg-primary text-primary-foreground"
+                              : "hover:bg-accent hover:text-accent-foreground"
+                          }`}
+                          onClick={() => router.push(item.path, { scroll: false })}
+                        >
+                          <item.icon className="w-5 h-5 mr-3" />
+                          <span className="font-medium">{item.title}</span>
+                        </Button>
+                      </DrawerClose>
+                    );
+                  })}
                 </nav>
-              </DrawerClose>
+              </div>
             </DrawerContent>
           </Drawer>
         </div>
