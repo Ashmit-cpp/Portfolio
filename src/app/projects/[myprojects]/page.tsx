@@ -103,7 +103,7 @@ function ProjectDetails() {
                   src={project.image}
                   fill
                   alt={`${project.title} screenshot`}
-                  className="object-cover hover:scale-105 transition-transform duration-500 rounded-lg md:rounded-xl"
+                  className="object-contain hover:scale-105 transition-transform duration-500 rounded-lg md:rounded-xl"
                 />
               </div>
             </div>

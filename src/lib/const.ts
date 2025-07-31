@@ -15,6 +15,21 @@ export interface ProjectDetailsMap {
 
 export const projects = [
   {
+    date: "01 Aug 2025",
+    link: "TypeCode-Tutor",
+    title: "TypeCode Tutor",
+    description:
+      "Interactive code typing practice app inspired by Monkeytype. Allows users to type custom code snippets with live feedback on speed and accuracy.",
+  },  
+  {
+    date: "25 May 2025",
+    link: "TaskOrbit",
+    title: "TaskOrbit",
+    description:
+      "Trello-like project management app built using React, Vite, Tailwind CSS v4, and ShadCN-style UI primitives. Features include authentication, drag-and-drop, and E2E testing.",
+  },
+  
+  {
     date: "22 Feb 2024",
     link: "Acme-EStore",
     title: "Acme EStore",
@@ -45,6 +60,23 @@ export const projects = [
 ];
 
 export const projectDetails: ProjectDetailsMap = {
+  "TypeCode-Tutor": {
+  title: "TypeCode Tutor",
+  desc: `Interactive code typing practice app inspired by Monkeytype. Allows users to type custom code snippets with live feedback on speed and accuracy.`,
+  image: "/typecode.png", // Update with the actual screenshot name
+  body: `TypeCode Tutor is a developer-focused typing practice app designed to improve code typing speed and accuracy. Drawing inspiration from Monkeytype, it allows users to input their own code snippets and practice in a distraction-free interface. Built with modern tooling such as React, Vite, and Tailwind CSS, the app provides real-time feedback on typing accuracy and words per minute. The app supports light/dark themes and custom styling, offering an engaging way for developers to improve their muscle memory with real code.`,
+  link: "https://github.com/Ashmit-cpp/typecode-tutor", // Replace if different
+  liveLink: "https://typecode-tutor.vercel.app/",       // Replace if different
+},
+
+  "TaskOrbit": {
+    title: "TaskOrbit",
+    desc: `Trello-like project management app built using React, Vite, Tailwind CSS v4, and ShadCN-style UI primitives. Features include authentication, drag-and-drop, and E2E testing.`,
+    image: "/taskorbit.png", 
+    body: `TaskOrbit is a modern, Trello-inspired project management application built with React 19, Vite, and Tailwind CSS v4. It features a full suite of productivity tools including user authentication, responsive drag-and-drop interactions (powered by @hello-pangea/dnd), and intuitive task/list creation via contextual dialogs. Forms are schema-validated using Zod and React Hook Form. It uses Radix UI and ShadCN patterns for accessible custom components and supports theming with a light/dark mode toggle. Notifications are handled using Sonner, and the application is thoroughly tested with Cypress for end-to-end reliability.`,
+    link: "https://github.com/Ashmit-cpp/trackier-trello",
+    liveLink: "https://taskorbit-trello.vercel.app/",
+  },
   "WebDev-IDE": {
     title: "WebDev IDE",
     desc: `A cross-platform IDE for web development using PyQt in Python, featuring a built-in browser window and support for syntax highlighting in HTML, CSS & Javascript.`,
